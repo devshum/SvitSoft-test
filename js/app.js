@@ -27,7 +27,8 @@ const UIController = (function() {
         topFigure: 'top-js',
         rightFigure: 'right-js',
         bottomFigure: 'bottom-js',
-        leftFigure: 'left-js'
+        leftFigure: 'left-js',
+        btnToggler: '.btn-toggler-js'
     };
 
     return {
@@ -36,6 +37,11 @@ const UIController = (function() {
         getLinks() {
             let linksAll = document.querySelectorAll(DOMStrings.links);
             return linksAll = Array.from(linksAll);
+        },
+
+        getBtns() {
+            let btns = document.querySelectorAll(DOMStrings.btnToggler);
+            return btnsAll = Array.from(btns);
         },
 
         hideFigures() {
@@ -92,6 +98,12 @@ const UIController = (function() {
                     link.style.animation=`toggleLink 1s ease forwards ${i / 4 + 0.4}s`;
                 }
             });
+        },
+
+        clearLinks() {
+            const linksAll = this.getLinks();
+
+            linksAll.forEach(link => link.style.color = '#4e254f40');
         }
     };
 })();
@@ -124,6 +136,9 @@ const globalController = (function(dataCtrl, UICtrl) {
     };
 
     const toggleNavigation = () => {
+        // CLEAR LINKS
+        UICtrl.clearLinks();
+
         // TOGGLE THE STATE VALUE
         dataCtrl.toggleState();
 
@@ -143,9 +158,16 @@ const globalController = (function(dataCtrl, UICtrl) {
         thisVal.style.color = '#4E254F';
     }
 
+    function clickBtnCtrl(thisVal) {
+        btnsAll.forEach(btn => btn.style.color = '#4e254f40');
+
+        thisVal.style.color = '#4E254F';
+    }
+
     const setupEventListeners = () => {
         const DOMStrings = UICtrl.getDOMStrings();
         const linksAll = UICtrl.getLinks();
+        const btnsAll = UICtrl.getBtns();
 
         document.getElementById(DOMStrings.cellIcon).addEventListener('click', toggleNavigation);
 
@@ -154,7 +176,14 @@ const globalController = (function(dataCtrl, UICtrl) {
             link.addEventListener('click', function() {
                 clickLinksCtrl(this);
             })
-        })
+        });
+
+        btnsAll.forEach(btn => {
+           
+            btn.addEventListener('click', function() {
+                clickBtnCtrl(this);
+            })
+        });
     };
 
     return {

@@ -2,7 +2,7 @@
   display: flex;
   align-items: center; }
 
-.transition-all, .cell-icon > *, .cell-icon .animation-cross-left-js, .cell-icon .animation-cross-right-js, .cell-icon .animation-top-js, .cell-icon .animation-left-js, .cell-icon .animation-right-js, .cell-icon .animation-bottom-js, .cell-icon .animation-cross-none-js, .header, .header__main-box, .navigation, .navigation__link:link, .navigation__link:visited {
+.transition-all, .btn-toggler, .cell-icon > *, .cell-icon .animation-cross-left-js, .cell-icon .animation-cross-right-js, .cell-icon .animation-top-js, .cell-icon .animation-left-js, .cell-icon .animation-right-js, .cell-icon .animation-bottom-js, .cell-icon .animation-cross-none-js, .header, .header__main-box, .navigation, .navigation__link:link, .navigation__link:visited {
   transition: all .5s; }
 
 @keyframes toggleLink {
