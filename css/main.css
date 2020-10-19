@@ -2,11 +2,22 @@
   display: flex;
   align-items: center; }
 
-.transition-all, .cell-icon > *, .cell-icon .animation-cross-left-js, .cell-icon .animation-cross-right-js, .cell-icon .animation-top-js, .cell-icon .animation-left-js, .cell-icon .animation-right-js, .cell-icon .animation-bottom-js, .cell-icon .animation-cross-none-js {
+.transition-all, .cell-icon > *, .cell-icon .animation-cross-left-js, .cell-icon .animation-cross-right-js, .cell-icon .animation-top-js, .cell-icon .animation-left-js, .cell-icon .animation-right-js, .cell-icon .animation-bottom-js, .cell-icon .animation-cross-none-js, .header, .header__main-box, .navigation {
   transition: all .5s; }
 
-.mr-24px {
-  margin-right: 2.4rem; }
+@keyframes toggleLink {
+  0% {
+    transform: translateX(2rem);
+    opacity: 0;
+    visibility: hidden; }
+  50% {
+    transform: translateX(-0.5rem);
+    opacity: 1;
+    visibility: visible; }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible; } }
 
 @font-face {
   font-family: "Helvetica Neue Light";
@@ -15,10 +26,33 @@
   font-style: normal; }
 
 @font-face {
+  font-family: "Helvetica Neue Regular";
+  src: local("Helvetica Neue Roman"), local("Helvetica Neue Roman"), url("../font/regular/HelveticaNeueCyr-Roman.woff2") format("woff2"), url("../font/regular/HelveticaNeueCyr-Roman.woff") format("woff"), url("../font/regular/HelveticaNeueCyr-Roman.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Helvetica Neue Medium";
+  src: local("Helvetica Neue Medium"), local("Helvetica Neue Medium"), url("../font/medium/HelveticaNeueCyr-Medium.woff2") format("woff2"), url("../font/medium/HelveticaNeueCyr-Medium.woff") format("woff"), url("../font/medium/HelveticaNeueCyr-Medium.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
   font-family: "Helvetica Neue Bold";
   src: local("Helvetica Neue Heavy"), local("Helvetica Neue Heavy"), url("../font/bold/HelveticaNeueCyr-Heavy.woff2") format("woff2"), url("../font/bold/HelveticaNeueCyr-Heavy.woff") format("woff"), url("../font/bold/HelveticaNeueCyr-Heavy.ttf") format("truetype");
   font-weight: 900;
   font-style: normal; }
+
+body {
+  color: #4E254F;
+  font-size: 1.6rem;
+  font-family: "Helvetica Neue Light", sans-serif; }
+
+.mr-24px {
+  margin-right: 2.4rem; }
+
+.mr-180px {
+  margin-left: 180px; }
 
 *,
 *::before,
@@ -31,12 +65,8 @@ html {
   box-sizing: inherit;
   font-size: 62.5%; }
 
-body {
-  color: #4E254F;
-  font-size: 1.6rem;
-  font-family: "Helvetica Neue Light", sans-serif; }
-
 .btn-toggler {
+  font-family: "Helvetica Neue Regular", sans-serif;
   color: rgba(78, 37, 79, 0.25);
   line-height: 1.6rem;
   font-size: 1.4rem;
@@ -45,6 +75,7 @@ body {
   outline: none;
   border: 0; }
   .btn-toggler--active {
+    font-family: "Helvetica Neue Medium", sans-serif;
     color: #4E254F; }
 
 .cell-icon {
@@ -98,15 +129,61 @@ body {
   font-family: "Helvetica Neue Bold", sans-serif; }
 
 .header {
+  border-bottom: solid .1rem transparent;
   justify-content: space-between;
-  padding-right: 3.2rem; }
+  padding-right: 3.2rem;
+  position: relative; }
   .header__main-box {
     padding: 2.4rem 4rem 2.4rem 8rem;
     background: #F7F8FC; }
   .header__language-toggler-box {
     margin-left: 5.5rem; }
   .header__icons-box {
-    height: 3.2rem;
-    width: 3.2rem; }
-  .header__nav {
-    display: none; }
+    width: 3.2rem;
+    height: 3.2rem; }
+
+.toggle-main-box-js {
+  background-color: #fff; }
+
+.toggle-header-js {
+  border-bottom: solid .1rem #F7F8FC; }
+
+.navigation {
+  background-color: #fff;
+  height: calc(100vh - 9.6rem);
+  position: absolute;
+  top: 10.3rem;
+  width: 100%;
+  left: 0;
+  opacity: 0;
+  visibility: hidden; }
+  .navigation__list {
+    margin-top: 12rem;
+    list-style: none; }
+  .navigation__item:not(:last-child) {
+    margin-bottom: 3.2rem; }
+  .navigation__item:last-child {
+    margin: 28.4rem 0 5.6rem 0; }
+    .navigation__item:last-child a {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+      color: #4E254F;
+      color: rgba(78, 37, 79, 0.25); }
+      .navigation__item:last-child a span {
+        color: #ed4156; }
+  .navigation__link:link, .navigation__link:visited {
+    opacity: 0;
+    visibility: hidden;
+    display: block;
+    width: 50%;
+    font-size: 3rem;
+    line-height: 4rem;
+    text-decoration: none;
+    color: rgba(78, 37, 79, 0.25);
+    font-family: "Helvetica Neue Regular", sans-serif; }
+  .navigation__link--active {
+    color: #4E254F !important; }
+
+.toggle-navigation-js {
+  opacity: 1;
+  visibility: visible; }

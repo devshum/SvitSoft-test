@@ -1,0 +1,58 @@
+.navigation {
+    background-color: $color-white;
+    height: calc(100vh - 9.6rem);
+    position: absolute;
+    top: 10.3rem;
+    width: 100%;
+    left: 0;
+
+    opacity: 0;
+    visibility: hidden;
+    @extend .transition-all;
+
+    &__list {
+        margin-top: 12rem;
+        list-style: none;
+    }
+
+    &__item {
+        &:not(:last-child) { margin-bottom: 3.2rem; }
+
+        &:last-child {
+            margin: 28.4rem 0 5.6rem 0;
+
+            a {
+                font-size: 1.2rem; 
+                line-height: 1.6rem;
+                color: $color-primary;
+                color: rgba($color-primary, .25);
+
+                span { color: $color-red; }
+            }
+        }
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            opacity: 0;
+            visibility: hidden;
+
+            display: block;
+            width: 50%;
+            
+            font-size: 3rem;
+            line-height: 4rem;
+            text-decoration: none;
+            color: rgba($color-primary, .25);
+            font-family: $font-helvetica-400;
+        }
+
+        &--active { color: $color-primary !important;}
+    }
+}
+
+.toggle-navigation-js {
+    opacity: 1;
+    visibility: visible;
+}

@@ -1,0 +1,42 @@
+// Helvetica Neue, weight 100
+@font-face {
+    @include HelveticaNeue('Helvetica Neue Light', 'Helvetica Neue Thin', 
+                           '../font/light/HelveticaNeueCyr-Thin.woff2', 
+                           '../font/light/HelveticaNeueCyr-Thin.woff', 
+                           '../font/light/HelveticaNeueCyr-Thin.ttf', 
+                           100, normal);
+}
+
+// Helvetica Neue, weight 400
+@font-face {
+    @include HelveticaNeue('Helvetica Neue Regular', 'Helvetica Neue Roman', 
+                           '../font/regular/HelveticaNeueCyr-Roman.woff2', 
+                           '../font/regular/HelveticaNeueCyr-Roman.woff', 
+                           '../font/regular/HelveticaNeueCyr-Roman.ttf', 
+                           400, normal);
+}
+
+// Helvetica Neue, weight 700
+@font-face {
+    @include HelveticaNeue('Helvetica Neue Medium', 'Helvetica Neue Medium', 
+                           '../font/medium/HelveticaNeueCyr-Medium.woff2', 
+                           '../font/medium/HelveticaNeueCyr-Medium.woff', 
+                           '../font/medium/HelveticaNeueCyr-Medium.ttf', 
+                           700, normal);
+}
+
+// Helvetica Neue, weight 900
+@font-face {
+    @include HelveticaNeue('Helvetica Neue Bold', 'Helvetica Neue Heavy', 
+                           '../font/bold/HelveticaNeueCyr-Heavy.woff2', 
+                           '../font/bold/HelveticaNeueCyr-Heavy.woff', 
+                           '../font/bold/HelveticaNeueCyr-Heavy.ttf', 
+                           900, normal);
+}
+
+
+body {
+    color: $color-primary;
+    font-size: $default-font-size; // 16px // 1rem = 10px
+    font-family: $font-helvetica-100;
+}

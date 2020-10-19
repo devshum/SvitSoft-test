@@ -1,4 +1,5 @@
 .btn-toggler {
+    font-family: $font-helvetica-400;
     color: rgba($color-primary, .25);
     line-height: $default-font-size;
     font-size: 1.4rem;
@@ -8,5 +9,8 @@
     border: 0;
     
 
-    &--active { color: $color-primary; }
+    &--active { 
+        font-family: $font-helvetica-700;
+        color: $color-primary; 
+    }
 }

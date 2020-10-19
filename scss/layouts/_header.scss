@@ -1,10 +1,15 @@
 .header {
     @extend .d-flex-align-center;
+    @extend .transition-all;
+    
+    border-bottom: solid .1rem transparent;
     justify-content: space-between;
     padding-right: 3.2rem;
+    position: relative;
 
     &__main-box {
         @extend .d-flex-align-center;
+        @extend .transition-all;
 
         padding: 2.4rem 4rem 2.4rem 8rem;
         background: $color-gray;
@@ -12,12 +17,9 @@
 
     &__language-toggler-box { margin-left: 5.5rem; }
 
-    &__icons-box {
-        height: 3.2rem;
-        width: 3.2rem;
-    }
-
-    &__nav {
-        display: none;
-    }
+    &__icons-box { @include widthHeight(3.2rem, 3.2rem); }
 }
+
+.toggle-main-box-js { background-color: $color-white; }
+.toggle-header-js { border-bottom: solid .1rem #F7F8FC; }
+
