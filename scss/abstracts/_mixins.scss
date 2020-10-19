@@ -1,0 +1,11 @@
+@mixin HelveticaNeue($font-family, $srcLocal, $urlWoff2, 
+                     $urlWoff, $urlTtf, $font-weight, $font-style) {
+                         
+    font-family: $font-family;
+    src: local($srcLocal), local($srcLocal),
+        url($urlWoff2) format('woff2'),
+        url($urlWoff) format('woff'),
+        url($urlTtf) format('truetype');
+    font-weight: $font-weight;
+    font-style: $font-style;
+};
