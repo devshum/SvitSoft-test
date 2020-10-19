@@ -33,6 +33,11 @@ const UIController = (function() {
     return {
         getDOMStrings() { return DOMStrings; },
 
+        getLinks() {
+            let linksAll = document.querySelectorAll(DOMStrings.links);
+            return linksAll = Array.from(linksAll);
+        },
+
         hideFigures() {
             // HIDE THE FIGURES
             let figureNoneAll = document.querySelectorAll(DOMStrings.figureNone);
@@ -78,8 +83,7 @@ const UIController = (function() {
         },
 
         animateLinks() {
-            let linksAll = document.querySelectorAll(DOMStrings.links);
-            linksAll = Array.from(linksAll);
+            linksAll = this.getLinks();
 
             linksAll.forEach((link, i) =>{
                 if(link.style.animation) {
@@ -133,9 +137,24 @@ const globalController = (function(dataCtrl, UICtrl) {
         };
     };
 
+    function clickLinksCtrl(thisVal) {
+        linksAll.forEach(link => link.style.color = '#4e254f40');
+
+        thisVal.style.color = '#4E254F';
+    }
+
     const setupEventListeners = () => {
         const DOMStrings = UICtrl.getDOMStrings();
+        const linksAll = UICtrl.getLinks();
+
         document.getElementById(DOMStrings.cellIcon).addEventListener('click', toggleNavigation);
+
+        linksAll.forEach(link => {
+           
+            link.addEventListener('click', function() {
+                clickLinksCtrl(this);
+            })
+        })
     };
 
     return {

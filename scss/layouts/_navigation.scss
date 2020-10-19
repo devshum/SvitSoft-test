@@ -46,9 +46,9 @@
             text-decoration: none;
             color: rgba($color-primary, .25);
             font-family: $font-helvetica-400;
-        }
 
-        &--active { color: $color-primary !important;}
+            @extend .transition-all;
+        }
     }
 }
 
