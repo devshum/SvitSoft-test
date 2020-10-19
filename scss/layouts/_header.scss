@@ -11,4 +11,13 @@
     }
 
     &__language-toggler-box { margin-left: 5.5rem; }
+
+    &__icons-box {
+        height: 3.2rem;
+        width: 3.2rem;
+    }
+
+    &__nav {
+        display: none;
+    }
 }

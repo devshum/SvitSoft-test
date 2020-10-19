@@ -9,3 +9,15 @@
     font-weight: $font-weight;
     font-style: $font-style;
 };
+
+@mixin widthHeight($width, $height) { 
+    width: $width;
+    height: $height;
+}
+
+@mixin changeGridDirection($translateXY) {
+    transform: $translateXY rotate(45deg);
+    background: rgba($color-primary, .25);
+    grid-area: 1 / 2 / 2 / 3;
+    justify-self: center;
+}

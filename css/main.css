@@ -2,6 +2,9 @@
   display: flex;
   align-items: center; }
 
+.transition-all, .cell-icon > *, .cell-icon .animation-cross-left-js, .cell-icon .animation-cross-right-js, .cell-icon .animation-top-js, .cell-icon .animation-left-js, .cell-icon .animation-right-js, .cell-icon .animation-bottom-js, .cell-icon .animation-cross-none-js {
+  transition: all .5s; }
+
 .mr-24px {
   margin-right: 2.4rem; }
 
@@ -44,6 +47,49 @@ body {
   .btn-toggler--active {
     color: #4E254F; }
 
+.cell-icon {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 3.2rem;
+  height: 3.2rem;
+  cursor: pointer; }
+  .cell-icon > * {
+    width: 0.4rem;
+    height: 0.4rem;
+    background: #4E254F;
+    align-self: center; }
+  .cell-icon .animation-cross-left-js {
+    transform: rotate(-45deg) translateX(1rem) translateY(1rem);
+    grid-area: 1 / 1 / 2 / 2;
+    height: 3.2rem; }
+  .cell-icon .animation-cross-right-js {
+    transform: rotate(45deg) translateX(-0.5rem) translateY(0.5rem);
+    grid-area: 1 / 3 / 2 / 4;
+    height: 3.2rem; }
+  .cell-icon .animation-top-js {
+    transform: translateY(-2rem) rotate(45deg);
+    background: rgba(78, 37, 79, 0.25);
+    grid-area: 1 / 2 / 2 / 3;
+    justify-self: center; }
+  .cell-icon .animation-left-js {
+    transform: translateX(-2rem) rotate(45deg);
+    background: rgba(78, 37, 79, 0.25);
+    grid-area: 1 / 2 / 2 / 3;
+    justify-self: center; }
+  .cell-icon .animation-right-js {
+    transform: translateX(2rem) rotate(45deg);
+    background: rgba(78, 37, 79, 0.25);
+    grid-area: 1 / 2 / 2 / 3;
+    justify-self: center; }
+  .cell-icon .animation-bottom-js {
+    transform: translateY(2rem) rotate(45deg);
+    background: rgba(78, 37, 79, 0.25);
+    grid-area: 1 / 2 / 2 / 3;
+    justify-self: center; }
+  .cell-icon .animation-cross-none-js {
+    opacity: 0; }
+
 .logo {
   font-size: 4rem;
   line-height: 4.8rem;
@@ -59,3 +105,8 @@ body {
     background: #F7F8FC; }
   .header__language-toggler-box {
     margin-left: 5.5rem; }
+  .header__icons-box {
+    height: 3.2rem;
+    width: 3.2rem; }
+  .header__nav {
+    display: none; }
