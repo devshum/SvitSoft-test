@@ -1,0 +1,16 @@
+.header {
+    @extend .d-flex-align-center;
+    justify-content: space-between;
+
+    &__main-box {
+        @extend .d-flex-align-center;
+
+        padding: 2.4rem 4rem 2.4rem 8rem;
+        background: $color-gray;
+    }
+
+    &__language-toggler-box { 
+        margin-left: 5.5rem; 
+        align-self: end;
+    }
+}

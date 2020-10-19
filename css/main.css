@@ -1,3 +1,7 @@
+.d-flex-align-center, .header, .header__main-box {
+  display: flex;
+  align-items: center; }
+
 @font-face {
   font-family: "Helvetica Neue Light";
   src: local("Helvetica Neue Thin"), local("Helvetica Neue Thin"), url("../font/light/HelveticaNeueCyr-Thin.woff2") format("woff2"), url("../font/light/HelveticaNeueCyr-Thin.woff") format("woff"), url("../font/light/HelveticaNeueCyr-Thin.ttf") format("truetype");
@@ -22,6 +26,26 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-family: "Helvetica Neue Light", sans-serif;
   color: #4E254F;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  font-family: "Helvetica Neue Light", sans-serif; }
+
+.btn-toggler {
+  font-size: 1.4rem;
+  line-height: 1.6rem; }
+
+.logo {
+  font-size: 4rem;
+  line-height: 4.8rem;
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+  font-family: "Helvetica Neue Bold", sans-serif; }
+
+.header {
+  justify-content: space-between; }
+  .header__main-box {
+    padding: 2.4rem 4rem 2.4rem 8rem;
+    background: #DADDE8; }
+  .header__language-toggler-box {
+    margin-left: 5.5rem;
+    align-self: end; }
