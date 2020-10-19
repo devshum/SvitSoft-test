@@ -2,6 +2,9 @@
   display: flex;
   align-items: center; }
 
+.mr-24px {
+  margin-right: 2.4rem; }
+
 @font-face {
   font-family: "Helvetica Neue Light";
   src: local("Helvetica Neue Thin"), local("Helvetica Neue Thin"), url("../font/light/HelveticaNeueCyr-Thin.woff2") format("woff2"), url("../font/light/HelveticaNeueCyr-Thin.woff") format("woff"), url("../font/light/HelveticaNeueCyr-Thin.ttf") format("truetype");
@@ -31,8 +34,15 @@ body {
   font-family: "Helvetica Neue Light", sans-serif; }
 
 .btn-toggler {
+  color: rgba(78, 37, 79, 0.25);
+  line-height: 1.6rem;
   font-size: 1.4rem;
-  line-height: 1.6rem; }
+  background: none;
+  cursor: pointer;
+  outline: none;
+  border: 0; }
+  .btn-toggler--active {
+    color: #4E254F; }
 
 .logo {
   font-size: 4rem;
@@ -42,10 +52,10 @@ body {
   font-family: "Helvetica Neue Bold", sans-serif; }
 
 .header {
-  justify-content: space-between; }
+  justify-content: space-between;
+  padding-right: 3.2rem; }
   .header__main-box {
     padding: 2.4rem 4rem 2.4rem 8rem;
-    background: #DADDE8; }
+    background: #F7F8FC; }
   .header__language-toggler-box {
-    margin-left: 5.5rem;
-    align-self: end; }
+    margin-left: 5.5rem; }

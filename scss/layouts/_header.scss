@@ -1,6 +1,7 @@
 .header {
     @extend .d-flex-align-center;
     justify-content: space-between;
+    padding-right: 3.2rem;
 
     &__main-box {
         @extend .d-flex-align-center;
@@ -9,8 +10,5 @@
         background: $color-gray;
     }
 
-    &__language-toggler-box { 
-        margin-left: 5.5rem; 
-        align-self: end;
-    }
+    &__language-toggler-box { margin-left: 5.5rem; }
 }
