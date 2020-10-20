@@ -2,16 +2,16 @@
 .mb-32px { 
     margin-bottom: 3.2rem; 
 
-    @include respond(desktop-mini) {
-        margin-bottom: 2.4rem;
-    }
+    @include respond(desktop-mini) { margin-bottom: 2.4rem; }
+
+    @include respond(phone) { margin-bottom: .8rem; }
 
 }
 .mb-16px { 
     margin-bottom: 1.6rem; 
 
-    @include respond(desktop-mini) {
-        margin-bottom: .8rem;
-    }
+    @include respond(desktop-mini) { margin-bottom: .8rem; }
+
+    @include respond(phone) { margin-bottom: .6rem; }
 }
 .mb-24px { margin-bottom: 2.4rem; }

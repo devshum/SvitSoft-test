@@ -10,9 +10,14 @@
     cursor: pointer;
     width: 26.1rem;
     outline: none;
-    border: 0;
+    border: none;
 
     @extend .transition-all;
+
+    @include respond(phone) {
+        font-size: 1.4rem;
+        line-height: .5rem;
+    }
 
     &:hover {
         &:hover,
@@ -46,6 +51,10 @@
         width: .1rem;
         top: -.1rem;
         content: '';
+
+        @include respond(phone) {
+            left: 70%;
+        }
     }
 
     &::after {   
@@ -55,5 +64,23 @@
         position: absolute;
         font-size: 2rem;
         right: 3.2rem;
+
+        @include respond(phone) {
+            transform: translateY(-.6rem);
+        }
+    }
+
+    &--about {
+        @include respond(phone) {
+            display: none;
+        }
+    }
+
+    &--home {
+        display: none; 
+
+        @include respond(phone) {
+            display: block;
+        }
     }
 }

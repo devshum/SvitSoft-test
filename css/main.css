@@ -74,6 +74,10 @@ body {
       font-size: 4.2rem;
       line-height: 5.6rem;
       letter-spacing: .2rem; } }
+  @media only screen and (max-width: 47.9375em) {
+    .heading-primary {
+      font-size: 3rem;
+      line-height: 3.9rem; } }
 
 .heading-secondary {
   font-size: 2.4rem;
@@ -82,6 +86,9 @@ body {
   @media only screen and (max-width: 118.75em) {
     .heading-secondary {
       font-size: 1.8rem; } }
+  @media only screen and (max-width: 47.9375em) {
+    .heading-secondary {
+      font-size: 1.4rem; } }
 
 .mr-24px {
   margin-right: 2.4rem; }
@@ -91,12 +98,18 @@ body {
   @media only screen and (max-width: 78.125em) {
     .mb-32px {
       margin-bottom: 2.4rem; } }
+  @media only screen and (max-width: 47.9375em) {
+    .mb-32px {
+      margin-bottom: .8rem; } }
 
 .mb-16px {
   margin-bottom: 1.6rem; }
   @media only screen and (max-width: 78.125em) {
     .mb-16px {
       margin-bottom: .8rem; } }
+  @media only screen and (max-width: 47.9375em) {
+    .mb-16px {
+      margin-bottom: .6rem; } }
 
 .mb-24px {
   margin-bottom: 2.4rem; }
@@ -186,6 +199,9 @@ html {
   letter-spacing: .2rem;
   text-transform: uppercase;
   font-family: "Helvetica Neue Bold", sans-serif; }
+  @media only screen and (max-width: 47.9375em) {
+    .logo {
+      font-size: 3.2rem; } }
 
 .slider {
   overflow: hidden; }
@@ -210,12 +226,20 @@ html {
     @media only screen and (max-width: 118.75em) {
       .slider__info {
         padding: 2.4rem 3.2rem; } }
+    @media only screen and (max-width: 47.9375em) {
+      .slider__info {
+        grid-row: 2 / 3;
+        grid-column: center-start / center-end;
+        padding: 2.4rem 1.6rem; } }
   .slider__panel-count {
     margin-bottom: 2.4rem;
     list-style: none; }
     @media only screen and (max-width: 118.75em) {
       .slider__panel-count {
         margin-bottom: 1.2rem; } }
+    @media only screen and (max-width: 47.9375em) {
+      .slider__panel-count {
+        margin-bottom: .6rem; } }
   .slider__figure,
   .slider figcaption {
     line-height: 2.4rem; }
@@ -247,7 +271,11 @@ html {
   cursor: pointer;
   width: 26.1rem;
   outline: none;
-  border: 0; }
+  border: none; }
+  @media only screen and (max-width: 47.9375em) {
+    .button {
+      font-size: 1.4rem;
+      line-height: .5rem; } }
   .button:hover:hover, .button:hover:active {
     transform: translateX(-1rem);
     background-position: -152%;
@@ -270,6 +298,9 @@ html {
     width: .1rem;
     top: -.1rem;
     content: ''; }
+    @media only screen and (max-width: 47.9375em) {
+      .button::before {
+        left: 70%; } }
   .button::after {
     content: url(../img/arr-right.svg);
     transform: translateY(0.2rem);
@@ -277,24 +308,42 @@ html {
     position: absolute;
     font-size: 2rem;
     right: 3.2rem; }
+    @media only screen and (max-width: 47.9375em) {
+      .button::after {
+        transform: translateY(-0.6rem); } }
+  @media only screen and (max-width: 47.9375em) {
+    .button--about {
+      display: none; } }
+  .button--home {
+    display: none; }
+    @media only screen and (max-width: 47.9375em) {
+      .button--home {
+        display: block; } }
 
 .language-mobile {
-  display: none;
   position: absolute;
-  top: 4rem;
-  right: 3rem; }
+  display: none;
+  right: 3rem;
+  top: 4rem; }
+  @media only screen and (max-width: 47.9375em) {
+    .language-mobile {
+      left: 3rem; } }
   .language-mobile li {
     display: inline-block; }
     .language-mobile li:not(:last-child) {
       margin-right: 2rem; }
     .language-mobile li button {
-      opacity: 0;
+      border: solid 0.1rem #F7F8FC;
+      background-color: transparent;
       visibility: hidden;
       font-size: 3rem;
+      cursor: pointer;
       padding: 1rem;
-      background-color: transparent;
-      border: solid 0.1rem #F7F8FC;
-      cursor: pointer; }
+      opacity: 0;
+      outline: none; }
+      @media only screen and (max-width: 47.9375em) {
+        .language-mobile li button {
+          font-size: 2.5rem; } }
   @media only screen and (max-width: 78.125em) {
     .language-mobile {
       display: block; } }
@@ -307,6 +356,9 @@ html {
     @media only screen and (max-width: 78.125em) {
       .hero__grid-container {
         padding-top: 30.5rem; } }
+    @media only screen and (max-width: 47.9375em) {
+      .hero__grid-container {
+        padding: 16.2rem 2.4rem 8.7rem 2.4rem; } }
   .hero__presentation {
     grid-row: 2 / 3;
     grid-column: center-start / col-start 5;
@@ -314,22 +366,45 @@ html {
     width: 79.2rem;
     padding: 8rem 3.6rem 12.8rem 4rem; }
     .hero__presentation figcaption {
-      font-family: "Helvetica Neue Regular", sans-serif; }
+      font-family: "Helvetica Neue Regular", sans-serif;
+      line-height: 2.4rem; }
+      @media only screen and (max-width: 78.125em) {
+        .hero__presentation figcaption {
+          font-size: 1.4rem; } }
     @media only screen and (max-width: 78.125em) {
       .hero__presentation {
         padding: 5.6rem 3.2rem 5.6rem 2.4rem;
         width: 100%; } }
+    @media only screen and (max-width: 47.9375em) {
+      .hero__presentation {
+        grid-row: 2 / 3;
+        grid-column: center-start / center-end;
+        padding: 3.2rem 1.6rem; } }
   .hero__button {
     grid-column: col-end 6 / center-end;
     justify-self: end; }
+    @media only screen and (max-width: 47.9375em) {
+      .hero__button {
+        margin-top: 1.5rem;
+        width: 100%;
+        grid-row: 3 / 4;
+        grid-column: center-start / center-end;
+        height: 4.8rem; } }
   .hero__slider {
     grid-row: 3 / 4;
     grid-column: col-end 4 / full-end; }
+    @media only screen and (max-width: 47.9375em) {
+      .hero__slider {
+        grid-row: 1 / 2;
+        grid-column: center-start / center-end; } }
   .hero__btn-box {
     display: flex;
     align-self: center;
     grid-row: 3 / 4;
     grid-column: col-start 1; }
+    @media only screen and (max-width: 47.9375em) {
+      .hero__btn-box {
+        display: none; } }
   .hero__btn-switch, .hero__btn-switch {
     border: solid 0.1rem #fff;
     background-color: transparent;
@@ -349,12 +424,33 @@ html {
   justify-content: space-between;
   padding-right: 3.2rem;
   position: relative; }
+  @media only screen and (max-width: 47.9375em) {
+    .header {
+      padding-right: 2.4rem; } }
+  .header::before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 9.9rem;
+    left: 0;
+    top: 0;
+    background-color: #F7F8FC;
+    z-index: -1;
+    display: none; }
+    @media only screen and (max-width: 47.9375em) {
+      .header::before {
+        display: block; } }
   .header__main-box {
     padding: 2.4rem 10.1rem 2.4rem 8rem;
-    background: #F7F8FC; }
+    background-color: #F7F8FC; }
     @media only screen and (max-width: 78.125em) {
       .header__main-box {
         padding: 3.2rem .9rem 3.5rem 3.2rem; } }
+    @media only screen and (max-width: 47.9375em) {
+      .header__main-box {
+        background-color: initial;
+        padding: 1.7rem 2.4rem; } }
   .header__language-toggler-box {
     margin-left: 5.5rem; }
     @media only screen and (max-width: 78.125em) {
@@ -378,15 +474,27 @@ html {
   left: 0;
   opacity: 0;
   visibility: hidden; }
+  @media only screen and (max-width: 78.125em) {
+    .navigation {
+      top: 11.6rem; } }
+  @media only screen and (max-width: 47.9375em) {
+    .navigation {
+      top: 8.2rem; } }
   .navigation__list {
     height: 100%;
     list-style: none;
     margin-top: 12rem;
     margin-left: 180px; }
+    @media only screen and (max-width: 47.9375em) {
+      .navigation__list {
+        margin-left: 3rem; } }
   .navigation__item:not(:last-child) {
     margin-bottom: 3.2rem; }
   .navigation__item:last-child {
     margin-top: 28.4rem; }
+    @media only screen and (max-width: 78.125em) {
+      .navigation__item:last-child {
+        padding-bottom: 5.6rem; } }
     .navigation__item:last-child a {
       font-size: 1.2rem;
       line-height: 1.6rem;
@@ -404,6 +512,9 @@ html {
     text-decoration: none;
     color: rgba(78, 37, 79, 0.25);
     font-family: "Helvetica Neue Regular", sans-serif; }
+    @media only screen and (max-width: 47.9375em) {
+      .navigation__link:link, .navigation__link:visited {
+        font-size: 2.5rem; } }
   .navigation__link:hover {
     color: #ef586b !important; }
 
@@ -422,3 +533,7 @@ html {
   @media only screen and (max-width: 78.125em) {
     .grid-container {
       grid-template-rows: 6.4rem 34.2rem 19.6rem; } }
+  @media only screen and (max-width: 47.9375em) {
+    .grid-container {
+      grid-template-rows: 20rem 24.6rem 4.8rem;
+      grid-template-columns: repeat(3, 1fr); } }

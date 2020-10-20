@@ -8,6 +8,10 @@
         @include respond(desktop-mini) {
             padding-top: 30.5rem;
         }
+
+        @include respond(phone) {
+            padding: 16.2rem 2.4rem 8.7rem 2.4rem;
+        }
     }
 
     &__presentation {
@@ -20,22 +24,47 @@
 
         figcaption {
             font-family: $font-helvetica-400;
+            line-height: 2.4rem;
+
+            @include respond(desktop-mini) {
+                font-size: 1.4rem;
+            }
         }
 
         @include respond(desktop-mini) {
             padding: 5.6rem 3.2rem 5.6rem 2.4rem;
             width: 100%;
         }
+
+        @include respond(phone) {
+            grid-row: 2 / 3;
+            grid-column: center-start / center-end;
+
+            padding: 3.2rem 1.6rem;
+        }
     }
 
     &__button {
         grid-column: col-end 6 / center-end;
         justify-self: end;
+
+        @include respond(phone) {
+            margin-top: 1.5rem;
+            width: 100%;
+            grid-row: 3 / 4;
+            grid-column: center-start / center-end;
+            height: 4.8rem;
+        }
     }
 
     &__slider {
         grid-row: 3 / 4;
         grid-column: col-end 4 / full-end;
+
+        @include respond(phone) {
+            grid-row: 1 / 2;
+            grid-column: center-start / center-end;
+        }
     }
 
     &__btn-box {
@@ -43,6 +72,10 @@
         align-self: center;
         grid-row: 3 / 4;
         grid-column: col-start 1;
+
+        @include respond(phone) {
+           display: none;
+        }
     }
 
     &__btn-switch,

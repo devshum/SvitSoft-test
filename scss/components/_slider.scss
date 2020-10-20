@@ -32,6 +32,13 @@
         @include respond(desktop) {
             padding: 2.4rem 3.2rem; 
         }
+
+        @include respond(phone) {
+            grid-row: 2 / 3;
+            grid-column: center-start / center-end;
+
+            padding: 2.4rem 1.6rem;
+        }
     }
 
     &__panel-count { 
@@ -40,6 +47,10 @@
 
         @include respond(desktop) {
             margin-bottom: 1.2rem; 
+        }
+
+        @include respond(phone) {
+            margin-bottom: .6rem; 
         }
     }
 
