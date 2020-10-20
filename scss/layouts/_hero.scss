@@ -36,15 +36,17 @@
 
     &__btn-switch,
     &__btn-switch {
-        width: 4rem;
-        padding: 2.4rem;
         border: solid .1rem $color-white;
+        background-color: transparent;
         transform: skew(-20deg);
+        padding: 2.4rem;
         cursor: pointer;
+        width: 4rem;
+        outline: 0;
+        
         @extend .transition-all;
 
-        &:hover,
-        &--active {
+        &:hover {
             border: solid .1rem transparent;
             background-color: $color-primary-2;
         }

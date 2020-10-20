@@ -1,10 +1,21 @@
 .slider {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    background-color: $color-primary;
+    overflow: hidden;
 
-    position: relative;
-    color: $color-primary-2;
+    &__track {
+        display: flex;
+
+        @extend .transition-all;
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        background-color: $color-primary;
+
+        min-width: 100%;
+        position: relative;
+        color: $color-primary-2;
+    }
 
     &__info { padding: 5.6rem 0 5.6rem 5.6rem; }
 
@@ -13,11 +24,10 @@
         list-style: none;
     }
 
-    &__item,
+    &__figure,
     figcaption { line-height: 2.4rem; }
 
-    &__item { 
-        cursor: pointer;
+    &__figure { 
         display: inline-block; 
 
         &:not(:first-child) { margin-left: 1.4rem; }

@@ -9,7 +9,7 @@ const dataController = (function() {
         toggleState() { state.navigation.toggled = !state.navigation.toggled; },
 
         // TESTING
-        getState() { return state; }
+        getState() { return state; },
     }
 })();
 
@@ -28,7 +28,13 @@ const UIController = (function() {
         bottomFigure: 'bottom-js',
         leftFigure: 'left-js',
         btnToggler: '.btn-toggler-js',
-        hero: 'hero-js'
+        hero: 'hero-js',
+
+        sliderContainer: 'slider-container',
+        sliderTrack: 'slider-track',
+        sliderItem: 'slider-item',
+        btnPrev: 'slider-btn-prev',
+        btnNext: 'slider-btn-next'
     };
 
     return {
@@ -132,7 +138,11 @@ const UIController = (function() {
         clearLoader() {
             const loader = document.querySelector('.loader');
             if(loader) loader.parentElement.removeChild(loader);
-        }
+        },
+
+       
+
+      
     };
 })();
 
@@ -238,3 +248,42 @@ const globalController = (function(dataCtrl, UICtrl) {
 })(dataController, UIController);
 
 globalController.init();
+
+
+// SLIDER LOGIC
+
+let position = 0;
+const slidesToShow = 1;
+const slidesToScroll = 1;
+const sliderContainer = document.getElementById('slider-container');
+const sliderTrack = document.getElementById('slider-track');
+const sliderItem = document.getElementById('slider-item');
+const btnPrev = document.getElementById('slider-btn-prev');
+const btnNext  = document.getElementById('slider-btn-next');
+const itemsCount = sliderItem.length;
+
+const sliderItemWidth = sliderItem.offsetWidth;
+
+const movePosition = slidesToScroll * sliderItemWidth;
+
+btnNext.addEventListener('click', () => {
+    position -= movePosition;
+    setPostition();
+    checkBtns();
+});
+
+btnPrev.addEventListener('click', () => {
+    position += movePosition;
+    setPostition();
+    checkBtns();
+});
+
+const setPostition = () => sliderTrack.style.transform = `translateX(${position}px)`;
+
+const checkBtns = () => {
+    btnPrev.disabled = position === 0;
+    btnNext.disabled = position <= -(4 - slidesToShow) * sliderItemWidth;
+};
+
+
+

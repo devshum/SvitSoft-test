@@ -38,21 +38,61 @@
           <figcaption>– это 7 лет успешной работы на украинском рынке. Более 700 квартир уже продано,<br> а в планах  компании построить 120 тыс. метров жилой площади.</figcaption>
         </figure>
         <button class="hero__button button">Про компанію</button>
-        <figure class="hero__slider slider"> 
-          <figure class="slider__info">
-            <ul class="slider__panel-count">
-              <li class="slider__item slider__item--active">01</li>
-              <li class="slider__item">02</li>
-              <li class="slider__item">03</li>
-              <li class="slider__item">04</li>
-            </ul>
-            <h2 class="heading-secondary mb-16px">Акційна пропозиція №1</h2>
-            <figcaption>Забудовник – это 5 лет успешной работы на украинском<br> рынке. Успешной работы на украинском рынке.</figcaption>
-          </figure><img class="slider__img" src="img/item-1.png" alt="item 1"/>
+        <figure class="hero__slider slider" id="slider-container">
+          <div class="slider__track" id="slider-track">
+            <div class="slider__item" id="slider-item">
+              <figure class="slider__info">
+                <ul class="slider__panel-count">
+                  <li class="slider__figure slider__figure--active">01</li>
+                  <li class="slider__figure">02</li>
+                  <li class="slider__figure">03</li>
+                  <li class="slider__figure">04</li>
+                </ul>
+                <h2 class="heading-secondary mb-16px">Акційна пропозиція №1</h2>
+                <figcaption>Забудовник – это 5 лет успешной работы на украинском<br> рынке. Успешной работы на  украинском рынке.</figcaption>
+              </figure><img class="slider__img" src="img/item-1.png" alt="item 1"/>
+            </div>
+            <div class="slider__item">
+              <figure class="slider__info">
+                <ul class="slider__panel-count">
+                  <li class="slider__figure">01</li>
+                  <li class="slider__figure slider__figure--active">02</li>
+                  <li class="slider__figure">03</li>
+                  <li class="slider__figure">04</li>
+                </ul>
+                <h2 class="heading-secondary mb-16px">Акційна пропозиція №2</h2>
+                <figcaption>Забудовник дає можливість автомобілістам скористатися<br> акційними умовами при купівлі паркомісць</figcaption>
+              </figure><img class="slider__img" src="img/item-2.png" alt="item 2"/>
+            </div>
+            <div class="slider__item">
+              <figure class="slider__info">
+                <ul class="slider__panel-count">
+                  <li class="slider__figure">01</li>
+                  <li class="slider__figure">02</li>
+                  <li class="slider__figure slider__figure--active">03</li>
+                  <li class="slider__figure">04</li>
+                </ul>
+                <h2 class="heading-secondary mb-16px">Акційна пропозиція №3</h2>
+                <figcaption>Забудовник дає можливість всім охочим скористатися<br> знижкою при купівлі квартир</figcaption>
+              </figure><img class="slider__img" src="img/item-3.png" alt="item 3"/>
+            </div>
+            <div class="slider__item">
+              <figure class="slider__info">
+                <ul class="slider__panel-count">
+                  <li class="slider__figure">01</li>
+                  <li class="slider__figure">02</li>
+                  <li class="slider__figure">03</li>
+                  <li class="slider__figure slider__figure--active">04</li>
+                </ul>
+                <h2 class="heading-secondary mb-16px">Акційна пропозиція №4</h2>
+                <figcaption>Забудовник пропонує розстрочку до 50 місяців на<br> квартири в 17-ти житлових комплексах компанії</figcaption>
+              </figure><img class="slider__img" src="img/item-4.png" alt="item 4"/>
+            </div>
+          </div>
         </figure>
         <div class="hero__btn-box"> 
-          <div class="hero__btn-switch mr-24px"> <img src="img/arr-left.svg" alt="arr-icon left"/></div>
-          <div class="hero__btn-switch hero__btn-switch--active"> <img src="img/arr-right.svg" alt="arr-icon right"/></div>
+          <button class="hero__btn-switch mr-24px" id="slider-btn-prev"> <img src="img/arr-left.svg" alt="arr-icon left"/></button>
+          <button class="hero__btn-switch" id="slider-btn-next"><img src="img/arr-right.svg" alt="arr-icon right"/></button>
         </div>
       </div>
     </section>

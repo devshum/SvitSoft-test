@@ -53,21 +53,58 @@ html(lang="en")
         h1.heading-primary.mb-32px Надійний<br> забудовник
         figcaption – это 7 лет успешной работы на украинском рынке. Более 700 квартир уже продано,<br> а в планах  компании построить 120 тыс. метров жилой площади.
        button.hero__button.button Про компанію
-       figure.hero__slider.slider 
-        figure.slider__info
-         ul.slider__panel-count
-          li.slider__item.slider__item--active 01
-          li.slider__item 02
-          li.slider__item 03
-          li.slider__item 04
-         h2.heading-secondary.mb-16px Акційна пропозиція №1
-         figcaption Забудовник – это 5 лет успешной работы на украинском<br> рынке. Успешной работы на украинском рынке.
-        img(src="img/item-1.png", alt="item 1").slider__img
+
+       
+       figure.hero__slider.slider#slider-container
+        .slider__track#slider-track
+         .slider__item#slider-item
+          figure.slider__info
+           ul.slider__panel-count
+            li.slider__figure.slider__figure--active 01
+            li.slider__figure 02
+            li.slider__figure 03
+            li.slider__figure 04
+           h2.heading-secondary.mb-16px Акційна пропозиція №1
+           figcaption Забудовник – это 5 лет успешной работы на украинском<br> рынке. Успешной работы на  украинском рынке.
+          img(src="img/item-1.png", alt="item 1").slider__img
+
+         .slider__item
+          figure.slider__info
+           ul.slider__panel-count
+            li.slider__figure 01
+            li.slider__figure.slider__figure--active 02
+            li.slider__figure 03
+            li.slider__figure 04
+           h2.heading-secondary.mb-16px Акційна пропозиція №2
+           figcaption Забудовник дає можливість автомобілістам скористатися<br> акційними умовами при купівлі паркомісць
+          img(src="img/item-2.png", alt="item 2").slider__img
+         
+         .slider__item
+          figure.slider__info
+           ul.slider__panel-count
+            li.slider__figure 01
+            li.slider__figure 02
+            li.slider__figure.slider__figure--active 03
+            li.slider__figure 04
+           h2.heading-secondary.mb-16px Акційна пропозиція №3
+           figcaption Забудовник дає можливість всім охочим скористатися<br> знижкою при купівлі квартир
+          img(src="img/item-3.png", alt="item 3").slider__img
+        
+         .slider__item
+          figure.slider__info
+           ul.slider__panel-count
+            li.slider__figure 01
+            li.slider__figure 02
+            li.slider__figure 03
+            li.slider__figure.slider__figure--active 04
+           h2.heading-secondary.mb-16px Акційна пропозиція №4
+           figcaption Забудовник пропонує розстрочку до 50 місяців на<br> квартири в 17-ти житлових комплексах компанії
+          img(src="img/item-4.png", alt="item 4").slider__img
 
        .hero__btn-box 
-        .hero__btn-switch.mr-24px 
+        button.hero__btn-switch#slider-btn-prev.mr-24px 
          img(src="img/arr-left.svg", alt="arr-icon left")
-        .hero__btn-switch.hero__btn-switch--active 
+        button.hero__btn-switch#slider-btn-next
          img(src="img/arr-right.svg", alt="arr-icon right")
         
     script(src="js/app.js")
