@@ -1,8 +1,6 @@
 const dataController = (function() {
     const state = {
-        navigation: { toggled: false },
-
-        slider: { currentPage: 1 }
+        navigation: { toggled: false }
     };
 
     return {
@@ -10,6 +8,7 @@ const dataController = (function() {
         
         toggleState() { state.navigation.toggled = !state.navigation.toggled; },
 
+        // TESTING
         getState() { return state; }
     }
 })();

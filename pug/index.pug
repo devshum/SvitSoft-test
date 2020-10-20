@@ -4,11 +4,11 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="/css/main.css")
-        title Document
+        title SvitSoft TEST
     body 
 
      nav.navigation#navigation-js
-       ul.navigation__list.mr-180px
+       ul.navigation__list
         li.navigation__item
          a(href="#").navigation__link.link-js Головна
         li.navigation__item
@@ -52,10 +52,23 @@ html(lang="en")
        figure.hero__presentation
         h1.heading-primary.mb-32px Надійний<br> забудовник
         figcaption – это 7 лет успешной работы на украинском рынке. Более 700 квартир уже продано,<br> а в планах  компании построить 120 тыс. метров жилой площади.
-    
        button.hero__button.button Про компанію
+       figure.hero__slider.slider 
+        figure.slider__info
+         ul.slider__panel-count
+          li.slider__item.slider__item--active 01
+          li.slider__item 02
+          li.slider__item 03
+          li.slider__item 04
+         h2.heading-secondary.mb-16px Акційна пропозиція №1
+         figcaption Забудовник – это 5 лет успешной работы на украинском<br> рынке. Успешной работы на украинском рынке.
+        img(src="img/item-1.png", alt="item 1").slider__img
 
-       figure.hero__slider.slider It'll be a slider
-
+       .hero__btn-box 
+        .hero__btn-switch.mr-24px 
+         img(src="img/arr-left.svg", alt="arr-icon left")
+        .hero__btn-switch.hero__btn-switch--active 
+         img(src="img/arr-right.svg", alt="arr-icon right")
+        
     script(src="js/app.js")
 

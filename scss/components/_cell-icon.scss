@@ -58,6 +58,7 @@
 
     .animation-cross-none-js {
         opacity: 0;
+        
         @extend .transition-all
     }
 }

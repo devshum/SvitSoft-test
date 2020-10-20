@@ -26,4 +26,29 @@
         grid-row: 3 / 4;
         grid-column: col-end 4 / full-end;
     }
+
+    &__btn-box {
+        display: flex;
+        align-self: center;
+        grid-row: 3 / 4;
+        grid-column: col-start 1;
+    }
+
+    &__btn-switch,
+    &__btn-switch {
+        width: 4rem;
+        padding: 2.4rem;
+        border: solid .1rem $color-white;
+        transform: skew(-20deg);
+        cursor: pointer;
+        @extend .transition-all;
+
+        &:hover,
+        &--active {
+            border: solid .1rem transparent;
+            background-color: $color-primary-2;
+        }
+
+        img { transform: translateX(-.8rem); }
+    }
 }
