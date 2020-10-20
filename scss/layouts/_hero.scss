@@ -8,10 +8,17 @@
         grid-row: 2 / 3;
         grid-column: center-start / col-start 5;
         background-color: $color-primary-2;
+
+        padding: 8rem 3.6rem 12.8rem 4rem;
+
+        figcaption {
+            font-family: $font-helvetica-400;
+        }
     }
 
     &__button {
         grid-column: col-end 6 / center-end;
+        justify-self: end;
     }
 
     &__slider {

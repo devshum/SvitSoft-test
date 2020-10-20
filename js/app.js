@@ -111,7 +111,7 @@ const UIController = (function() {
             const loader = `
                 <div class="loader">
                     <svg>
-                        <use href="img/icons.svg#icon-cw"></use>
+                        <use href="img/cw-icon.svg#icon-cw"></use>
                     </svg>
                 </div>
             `;
