@@ -28,7 +28,8 @@ const UIController = (function() {
         rightFigure: 'right-js',
         bottomFigure: 'bottom-js',
         leftFigure: 'left-js',
-        btnToggler: '.btn-toggler-js'
+        btnToggler: '.btn-toggler-js',
+        hero: 'hero-js'
     };
 
     return {
@@ -97,6 +98,16 @@ const UIController = (function() {
                     link.style.animation=`toggleLink 1s ease forwards ${i / 4 + 0.4}s`;
                 };
             });
+        },
+
+        animateHero() {
+            const hero = document.getElementById(DOMStrings.hero);
+
+            if(hero.style.animation) {
+                hero.style.animation = '';
+            } else {
+                hero.style.animation=`toggleHero 1s ease forwards`;
+            };
         },
 
         clearLinks() {
@@ -188,6 +199,14 @@ const globalController = (function(dataCtrl, UICtrl) {
 
     function clickBtnCtrl(thisVal) {
         btnsAll.forEach(btn => btn.style.color = '#4e254f40');
+
+        UICtrl.animateHero();
+        UICtrl.renderLoader(DOMStrings.header);
+
+        setTimeout(() => {
+            UICtrl.animateHero();
+            UICtrl.clearLoader();
+        }, 1500);
 
         thisVal.style.color = '#4E254F';
     }

@@ -19,6 +19,14 @@
     opacity: 1;
     visibility: visible; } }
 
+@keyframes toggleHero {
+  0% {
+    opacity: 1;
+    visibility: visible; }
+  100% {
+    opacity: 0;
+    visibility: hidden; } }
+
 @keyframes rotate {
   0% {
     transform: rotate(0); }
@@ -142,8 +150,10 @@ html {
     opacity: 0; }
 
 .loader {
-  margin: 15rem auto;
-  text-align: center; }
+  transform: translateX(-50%);
+  position: absolute;
+  top: 15rem;
+  left: 50%; }
   .loader svg {
     height: 6.5rem;
     width: 6.5rem;
@@ -213,6 +223,7 @@ html {
     grid-row: 2 / 3;
     grid-column: center-start / col-start 5;
     background-color: #9ACCC2;
+    width: 79.2rem;
     padding: 8rem 3.6rem 12.8rem 4rem; }
     .hero__presentation figcaption {
       font-family: "Helvetica Neue Regular", sans-serif; }

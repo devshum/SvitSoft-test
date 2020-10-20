@@ -1,6 +1,8 @@
 .loader {
-    margin: 15rem auto;
-    text-align: center; 
+    transform: translateX(-50%);
+    position: absolute;
+    top: 15rem;
+    left: 50%;
 
     svg {
         height: 6.5rem;
