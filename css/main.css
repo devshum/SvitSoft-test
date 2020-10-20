@@ -52,13 +52,17 @@
 body {
   color: #4E254F;
   font-size: 1.6rem;
-  font-family: "Helvetica Neue Light", sans-serif; }
+  font-family: "Helvetica Neue Light", sans-serif;
+  position: relative; }
 
 .mr-24px {
   margin-right: 2.4rem; }
 
 .mr-180px {
   margin-left: 180px; }
+
+.mt-232px {
+  margin-top: 23.2rem; }
 
 *,
 *::before,
@@ -144,13 +148,31 @@ html {
   text-transform: uppercase;
   font-family: "Helvetica Neue Bold", sans-serif; }
 
+.slider {
+  background-color: #4E254F; }
+
+.hero {
+  background: url(/img/hero.png) center no-repeat;
+  background-size: cover; }
+  .hero__grid-container {
+    padding-top: 29.6rem; }
+  .hero__presentation {
+    grid-row: 2 / 3;
+    grid-column: center-start / col-start 5;
+    background-color: #9ACCC2; }
+  .hero__button {
+    grid-column: col-end 6 / center-end; }
+  .hero__slider {
+    grid-row: 3 / 4;
+    grid-column: col-end 4 / full-end; }
+
 .header {
   border-bottom: solid .1rem transparent;
   justify-content: space-between;
   padding-right: 3.2rem;
   position: relative; }
   .header__main-box {
-    padding: 2.4rem 4rem 2.4rem 8rem;
+    padding: 2.4rem 10.1rem 2.4rem 8rem;
     background: #F7F8FC; }
   .header__language-toggler-box {
     margin-left: 5.5rem; }
@@ -161,25 +183,24 @@ html {
 .toggle-main-box-js {
   background-color: #fff; }
 
-.toggle-header-js {
-  border-bottom: solid .1rem #F7F8FC; }
-
 .navigation {
+  border-top: solid .1rem #F7F8FC;
   background-color: #fff;
-  height: calc(100vh - 9.6rem);
   position: absolute;
-  top: 10.3rem;
+  top: 9.6rem;
   width: 100%;
+  bottom: 0;
   left: 0;
   opacity: 0;
   visibility: hidden; }
   .navigation__list {
-    margin-top: 12rem;
-    list-style: none; }
+    height: 100%;
+    list-style: none;
+    margin-top: 12rem; }
   .navigation__item:not(:last-child) {
     margin-bottom: 3.2rem; }
   .navigation__item:last-child {
-    margin: 28.4rem 0 5.6rem 0; }
+    margin-top: 28.4rem; }
     .navigation__item:last-child a {
       font-size: 1.2rem;
       line-height: 1.6rem;
@@ -203,3 +224,8 @@ html {
 .toggle-navigation-js {
   opacity: 1;
   visibility: visible; }
+
+.grid-container {
+  display: grid;
+  grid-template-rows: 6.4rem 43.2rem 25.6rem;
+  grid-template-columns: [full-start] minmax(18rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 19.5rem) [col-end]) [center-end] minmax(18rem, 1fr) [full-end]; }

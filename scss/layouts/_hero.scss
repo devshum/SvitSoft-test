@@ -1,0 +1,21 @@
+.hero {
+    background: url(/img/hero.png) center no-repeat;
+    background-size: cover;
+
+    &__grid-container { padding-top: 29.6rem; }
+
+    &__presentation {
+        grid-row: 2 / 3;
+        grid-column: center-start / col-start 5;
+        background-color: $color-primary-2;
+    }
+
+    &__button {
+        grid-column: col-end 6 / center-end;
+    }
+
+    &__slider {
+        grid-row: 3 / 4;
+        grid-column: col-end 4 / full-end;
+    }
+}

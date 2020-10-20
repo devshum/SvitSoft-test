@@ -79,7 +79,6 @@ const UIController = (function() {
             const mainBox = document.getElementById(DOMStrings.mainBox);
 
             mainBox.classList.toggle('toggle-main-box-js');
-            header.classList.toggle('toggle-header-js');
         },
 
         animateNavigation() {

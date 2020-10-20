@@ -1,25 +1,28 @@
 .navigation {
+    border-top: solid .1rem #F7F8FC;
     background-color: $color-white;
-    height: calc(100vh - 9.6rem);
     position: absolute;
-    top: 10.3rem;
+    top: 9.6rem;
     width: 100%;
+    bottom: 0;
     left: 0;
 
     opacity: 0;
     visibility: hidden;
+    
     @extend .transition-all;
 
     &__list {
-        margin-top: 12rem;
+        height: 100%;
         list-style: none;
+        margin-top: 12rem;
     }
 
     &__item {
         &:not(:last-child) { margin-bottom: 3.2rem; }
 
         &:last-child {
-            margin: 28.4rem 0 5.6rem 0;
+            margin-top: 28.4rem;
 
             a {
                 font-size: 1.2rem; 

@@ -1,0 +1,5 @@
+.grid-container {
+    display: grid;
+    grid-template-rows: 6.4rem 43.2rem 25.6rem;
+    grid-template-columns: [full-start] minmax(18rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 19.5rem) [col-end]) [center-end] minmax(18rem, 1fr) [full-end];
+}
