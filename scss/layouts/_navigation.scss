@@ -49,6 +49,10 @@
 
             @extend .transition-all;
         }
+
+        &:hover {
+            color: lighten($color-red, 5) !important;
+        }
     }
 }
 

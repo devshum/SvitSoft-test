@@ -96,7 +96,7 @@ const UIController = (function() {
                     link.style.animation = '';
                 } else {
                     link.style.animation=`toggleLink 1s ease forwards ${i / 4 + 0.4}s`;
-                }
+                };
             });
         },
 
@@ -104,11 +104,31 @@ const UIController = (function() {
             const linksAll = this.getLinks();
 
             linksAll.forEach(link => link.style.color = '#4e254f40');
+        },
+
+        renderLoader(containerString) {
+            const parent = document.getElementById(containerString);
+
+            const loader = `
+                <div class="loader">
+                    <svg>
+                        <use href="img/icons.svg#icon-cw"></use>
+                    </svg>
+                </div>
+            `;
+
+            parent.insertAdjacentHTML('afterbegin', loader);
+        },
+
+        clearLoader() {
+            const loader = document.querySelector('.loader');
+            if(loader) loader.parentElement.removeChild(loader);
         }
     };
 })();
 
 const globalController = (function(dataCtrl, UICtrl) {
+    const DOMStrings = UICtrl.getDOMStrings();
 
     const iconAnimationCtrl = () => {
         // TOGGLE THE STATE VALUE
@@ -131,7 +151,7 @@ const globalController = (function(dataCtrl, UICtrl) {
         // ANIMATE THE NAV
         UICtrl.animateNavigation();
 
-        // ANIMATE THE LINKS()
+        // ANIMATE THE LINKS
         UICtrl.animateLinks();
     };
 
@@ -155,6 +175,15 @@ const globalController = (function(dataCtrl, UICtrl) {
     function clickLinksCtrl(thisVal) {
         linksAll.forEach(link => link.style.color = '#4e254f40');
 
+        UICtrl.animateLinks();
+        UICtrl.renderLoader(DOMStrings.navigation);
+
+        setTimeout(() => {
+            UICtrl.animateLinks();
+            UICtrl.clearLoader();
+        }, 1000);
+
+
         thisVal.style.color = '#4E254F';
     }
 
@@ -165,7 +194,6 @@ const globalController = (function(dataCtrl, UICtrl) {
     }
 
     const setupEventListeners = () => {
-        const DOMStrings = UICtrl.getDOMStrings();
         const linksAll = UICtrl.getLinks();
         const btnsAll = UICtrl.getBtns();
 

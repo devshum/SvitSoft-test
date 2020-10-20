@@ -19,6 +19,12 @@
     opacity: 1;
     visibility: visible; } }
 
+@keyframes rotate {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+
 @font-face {
   font-family: "Helvetica Neue Light";
   src: local("Helvetica Neue Thin"), local("Helvetica Neue Thin"), url("../font/light/HelveticaNeueCyr-Thin.woff2") format("woff2"), url("../font/light/HelveticaNeueCyr-Thin.woff") format("woff"), url("../font/light/HelveticaNeueCyr-Thin.ttf") format("truetype");
@@ -121,6 +127,16 @@ html {
   .cell-icon .animation-cross-none-js {
     opacity: 0; }
 
+.loader {
+  margin: 15rem auto;
+  text-align: center; }
+  .loader svg {
+    height: 6.5rem;
+    width: 6.5rem;
+    fill: #4E254F;
+    transform-origin: 44% 50%;
+    animation: rotate 1.5s infinite linear; }
+
 .logo {
   font-size: 4rem;
   line-height: 4.8rem;
@@ -181,6 +197,8 @@ html {
     text-decoration: none;
     color: rgba(78, 37, 79, 0.25);
     font-family: "Helvetica Neue Regular", sans-serif; }
+  .navigation__link:hover {
+    color: #ef586b !important; }
 
 .toggle-navigation-js {
   opacity: 1;
