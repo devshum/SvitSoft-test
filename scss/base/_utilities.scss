@@ -1,5 +1,17 @@
 .mr-24px { margin-right: 2.4rem }
-.mt-232px { margin-top: 23.2rem; }
-.mb-32px { margin-bottom: 3.2rem; }
-.mb-16px { margin-bottom: 1.6rem; }
+.mb-32px { 
+    margin-bottom: 3.2rem; 
+
+    @include respond(desktop-mini) {
+        margin-bottom: 2.4rem;
+    }
+
+}
+.mb-16px { 
+    margin-bottom: 1.6rem; 
+
+    @include respond(desktop-mini) {
+        margin-bottom: .8rem;
+    }
+}
 .mb-24px { margin-bottom: 2.4rem; }

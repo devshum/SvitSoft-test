@@ -69,23 +69,34 @@ body {
   text-transform: uppercase;
   letter-spacing: .2rem;
   line-height: 7.2rem; }
+  @media only screen and (max-width: 78.125em) {
+    .heading-primary {
+      font-size: 4.2rem;
+      line-height: 5.6rem;
+      letter-spacing: .2rem; } }
 
 .heading-secondary {
   font-size: 2.4rem;
   font-family: "Helvetica Neue Medium", sans-serif;
   line-height: 3.2rem; }
+  @media only screen and (max-width: 118.75em) {
+    .heading-secondary {
+      font-size: 1.8rem; } }
 
 .mr-24px {
   margin-right: 2.4rem; }
 
-.mt-232px {
-  margin-top: 23.2rem; }
-
 .mb-32px {
   margin-bottom: 3.2rem; }
+  @media only screen and (max-width: 78.125em) {
+    .mb-32px {
+      margin-bottom: 2.4rem; } }
 
 .mb-16px {
   margin-bottom: 1.6rem; }
+  @media only screen and (max-width: 78.125em) {
+    .mb-16px {
+      margin-bottom: .8rem; } }
 
 .mb-24px {
   margin-bottom: 2.4rem; }
@@ -179,7 +190,8 @@ html {
 .slider {
   overflow: hidden; }
   .slider__track {
-    display: flex; }
+    display: flex;
+    height: 100%; }
   .slider__item {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -187,14 +199,30 @@ html {
     min-width: 100%;
     position: relative;
     color: #9ACCC2; }
+    @media only screen and (max-width: 118.75em) {
+      .slider__item {
+        grid-template-columns: 1fr;
+        display: grid;
+        align-items: center; } }
   .slider__info {
+    width: 100%;
     padding: 5.6rem 0 5.6rem 5.6rem; }
+    @media only screen and (max-width: 118.75em) {
+      .slider__info {
+        padding: 2.4rem 3.2rem; } }
   .slider__panel-count {
     margin-bottom: 2.4rem;
     list-style: none; }
+    @media only screen and (max-width: 118.75em) {
+      .slider__panel-count {
+        margin-bottom: 1.2rem; } }
   .slider__figure,
   .slider figcaption {
     line-height: 2.4rem; }
+    @media only screen and (max-width: 118.75em) {
+      .slider__figure,
+      .slider figcaption {
+        font-size: 1.4rem; } }
   .slider__figure {
     display: inline-block; }
     .slider__figure:not(:first-child) {
@@ -203,6 +231,9 @@ html {
       font-family: "Helvetica Neue Medium", sans-serif; }
   .slider__img {
     clip-path: polygon(18% 0%, 100% 0, 100% 100%, 0% 100%); }
+    @media only screen and (max-width: 118.75em) {
+      .slider__img {
+        display: none; } }
 
 .button {
   background-image: linear-gradient(105deg, #4E254F 0%, #4E254F 50%, #9ACCC2 50%);
@@ -247,11 +278,35 @@ html {
     font-size: 2rem;
     right: 3.2rem; }
 
+.language-mobile {
+  display: none;
+  position: absolute;
+  top: 4rem;
+  right: 3rem; }
+  .language-mobile li {
+    display: inline-block; }
+    .language-mobile li:not(:last-child) {
+      margin-right: 2rem; }
+    .language-mobile li button {
+      opacity: 0;
+      visibility: hidden;
+      font-size: 3rem;
+      padding: 1rem;
+      background-color: transparent;
+      border: solid 0.1rem #F7F8FC;
+      cursor: pointer; }
+  @media only screen and (max-width: 78.125em) {
+    .language-mobile {
+      display: block; } }
+
 .hero {
   background: url(/img/hero.png) center no-repeat;
   background-size: cover; }
   .hero__grid-container {
-    padding-top: 29.6rem; }
+    padding-top: 23.2rem; }
+    @media only screen and (max-width: 78.125em) {
+      .hero__grid-container {
+        padding-top: 30.5rem; } }
   .hero__presentation {
     grid-row: 2 / 3;
     grid-column: center-start / col-start 5;
@@ -260,6 +315,10 @@ html {
     padding: 8rem 3.6rem 12.8rem 4rem; }
     .hero__presentation figcaption {
       font-family: "Helvetica Neue Regular", sans-serif; }
+    @media only screen and (max-width: 78.125em) {
+      .hero__presentation {
+        padding: 5.6rem 3.2rem 5.6rem 2.4rem;
+        width: 100%; } }
   .hero__button {
     grid-column: col-end 6 / center-end;
     justify-self: end; }
@@ -293,8 +352,14 @@ html {
   .header__main-box {
     padding: 2.4rem 10.1rem 2.4rem 8rem;
     background: #F7F8FC; }
+    @media only screen and (max-width: 78.125em) {
+      .header__main-box {
+        padding: 3.2rem .9rem 3.5rem 3.2rem; } }
   .header__language-toggler-box {
     margin-left: 5.5rem; }
+    @media only screen and (max-width: 78.125em) {
+      .header__language-toggler-box {
+        display: none; } }
   .header__icons-box {
     width: 3.2rem;
     height: 3.2rem; }
@@ -350,3 +415,10 @@ html {
   display: grid;
   grid-template-rows: 6.4rem 43.2rem 25.6rem;
   grid-template-columns: [full-start] minmax(18rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 19.5rem) [col-end]) [center-end] minmax(18rem, 1fr) [full-end]; }
+  @media only screen and (max-width: 118.75em) {
+    .grid-container {
+      grid-template-rows: 6.4rem 43.2rem 19.6rem;
+      grid-template-columns: [full-start] minmax(3.3rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 19.5rem) [col-end]) [center-end] minmax(3.3rem, 1fr) [full-end]; } }
+  @media only screen and (max-width: 78.125em) {
+    .grid-container {
+      grid-template-rows: 6.4rem 34.2rem 19.6rem; } }

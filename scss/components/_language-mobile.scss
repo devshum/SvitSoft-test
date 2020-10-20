@@ -1,0 +1,26 @@
+.language-mobile {
+    display: none;
+    position: absolute;
+    top: 4rem;
+    right: 3rem;
+
+    li { 
+        display: inline-block;
+
+        &:not(:last-child) { margin-right: 2rem; }
+
+        button {
+            opacity: 0;
+            visibility: hidden;
+            font-size: 3rem;
+            padding: 1rem;
+            background-color: transparent;
+            border: solid .1rem $color-gray;
+            cursor: pointer;
+        }
+    }
+    
+    @include respond(desktop-mini) {
+        display: block;
+    }
+}

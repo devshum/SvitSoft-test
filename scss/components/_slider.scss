@@ -3,6 +3,7 @@
 
     &__track {
         display: flex;
+        height: 100%;
 
         @extend .transition-all;
     }
@@ -15,17 +16,41 @@
         min-width: 100%;
         position: relative;
         color: $color-primary-2;
+
+        @include respond(desktop) {
+            grid-template-columns: 1fr;
+
+            display: grid;
+            align-items: center;
+        }
     }
 
-    &__info { padding: 5.6rem 0 5.6rem 5.6rem; }
+    &__info { 
+        width: 100%;
+        padding: 5.6rem 0 5.6rem 5.6rem; 
+
+        @include respond(desktop) {
+            padding: 2.4rem 3.2rem; 
+        }
+    }
 
     &__panel-count { 
         margin-bottom: 2.4rem; 
         list-style: none;
+
+        @include respond(desktop) {
+            margin-bottom: 1.2rem; 
+        }
     }
 
     &__figure,
-    figcaption { line-height: 2.4rem; }
+    figcaption { 
+        line-height: 2.4rem; 
+
+        @include respond(desktop) {
+            font-size: 1.4rem;
+        }
+    }
 
     &__figure { 
         display: inline-block; 
@@ -35,5 +60,11 @@
         &--active { font-family: $font-helvetica-700; }
     }
 
-    &__img { clip-path: polygon(18% 0%, 100% 0, 100% 100%, 0% 100%); }
+    &__img { 
+        @include respond(desktop) {
+            display: none;
+        }
+        
+        clip-path: polygon(18% 0%, 100% 0, 100% 100%, 0% 100%); 
+    }
 }

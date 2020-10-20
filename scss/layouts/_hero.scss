@@ -2,7 +2,13 @@
     background: url(/img/hero.png) center no-repeat;
     background-size: cover;
 
-    &__grid-container { padding-top: 29.6rem; }
+    &__grid-container { 
+        padding-top: 23.2rem; 
+
+        @include respond(desktop-mini) {
+            padding-top: 30.5rem;
+        }
+    }
 
     &__presentation {
         grid-row: 2 / 3;
@@ -14,6 +20,11 @@
 
         figcaption {
             font-family: $font-helvetica-400;
+        }
+
+        @include respond(desktop-mini) {
+            padding: 5.6rem 3.2rem 5.6rem 2.4rem;
+            width: 100%;
         }
     }
 

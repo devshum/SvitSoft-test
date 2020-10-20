@@ -13,9 +13,19 @@
 
         padding: 2.4rem 10.1rem 2.4rem 8rem;
         background: $color-gray;
+
+        @include respond(desktop-mini) {
+            padding: 3.2rem .9rem 3.5rem 3.2rem;
+        }
     }
 
-    &__language-toggler-box { margin-left: 5.5rem; }
+    &__language-toggler-box { 
+        margin-left: 5.5rem; 
+
+        @include respond(desktop-mini) {
+            display: none;
+        }
+    }
 
     &__icons-box { @include widthHeight(3.2rem, 3.2rem); }
 }

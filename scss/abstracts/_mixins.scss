@@ -21,3 +21,20 @@
     grid-area: 1 / 2 / 2 / 3;
     justify-self: center;
 }
+
+// MEDIA QUERY MANAGER
+@mixin respond($breakpoint) {    
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 56.25em) { @content; }    //900px
+    }
+
+    @if $breakpoint == desktop-mini {
+        @media only screen and (max-width: 78.125em) { @content; }     //1250px
+    }
+
+    @if $breakpoint == desktop {
+        @media only screen and (max-width: 118.75em) { @content; }     //1900px
+    }
+}
+
+

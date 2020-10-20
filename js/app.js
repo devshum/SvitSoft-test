@@ -266,6 +266,13 @@ const sliderItemWidth = sliderItem.offsetWidth;
 
 const movePosition = slidesToScroll * sliderItemWidth;
 
+const checkBtns = () => {
+    btnPrev.disabled = position === 0;
+    btnNext.disabled = position <= -(4 - slidesToShow) * sliderItemWidth;
+};
+
+const setPostition = () => sliderTrack.style.transform = `translateX(${position}px)`;
+
 btnNext.addEventListener('click', () => {
     position -= movePosition;
     setPostition();
@@ -278,12 +285,7 @@ btnPrev.addEventListener('click', () => {
     checkBtns();
 });
 
-const setPostition = () => sliderTrack.style.transform = `translateX(${position}px)`;
-
-const checkBtns = () => {
-    btnPrev.disabled = position === 0;
-    btnNext.disabled = position <= -(4 - slidesToShow) * sliderItemWidth;
-};
+checkBtns();
 
 
 
