@@ -5,10 +5,10 @@
     left: 50%;
 
     svg {
-        height: 6.5rem;
-        width: 6.5rem;
-        fill: $color-primary;
-        transform-origin: 44% 50%;
         animation: rotate 1.5s infinite linear;
+        transform-origin: 44% 50%;
+        fill: $color-primary;
+
+        @include widthHeight(6.5rem, 6.5rem);
     }
 }

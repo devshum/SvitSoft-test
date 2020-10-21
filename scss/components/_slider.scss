@@ -13,25 +13,23 @@
         grid-template-columns: 2fr 1fr;
         background-color: $color-primary;
 
-        min-width: 100%;
-        position: relative;
         color: $color-primary-2;
+        position: relative;
+        min-width: 100%;
 
         @include respond(desktop) {
-            grid-template-columns: 1fr;
-
             display: grid;
             align-items: center;
+
+            grid-template-columns: 1fr;
         }
     }
 
     &__info { 
-        width: 100%;
         padding: 5.6rem 0 5.6rem 5.6rem; 
+        width: 100%;
 
-        @include respond(desktop) {
-            padding: 2.4rem 3.2rem; 
-        }
+        @include respond(desktop) { padding: 2.4rem 3.2rem;  }
 
         @include respond(phone) {
             grid-row: 2 / 3;
@@ -45,22 +43,16 @@
         margin-bottom: 2.4rem; 
         list-style: none;
 
-        @include respond(desktop) {
-            margin-bottom: 1.2rem; 
-        }
+        @include respond(desktop) { margin-bottom: 1.2rem; }
 
-        @include respond(phone) {
-            margin-bottom: .6rem; 
-        }
+        @include respond(phone) { margin-bottom: .6rem; }
     }
 
     &__figure,
     figcaption { 
         line-height: 2.4rem; 
 
-        @include respond(desktop) {
-            font-size: 1.4rem;
-        }
+        @include respond(desktop) { font-size: 1.4rem; }
     }
 
     &__figure { 
@@ -72,10 +64,9 @@
     }
 
     &__img { 
-        @include respond(desktop) {
-            display: none;
-        }
+        @include respond(desktop) { display: none; }
         
+        -webkit-clip-path: polygon(18% 0%, 100% 0, 100% 100%, 0% 100%); 
         clip-path: polygon(18% 0%, 100% 0, 100% 100%, 0% 100%); 
     }
 }

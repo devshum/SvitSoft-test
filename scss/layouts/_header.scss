@@ -7,25 +7,20 @@
     padding-right: 3.2rem;
     position: relative;
 
-    @include respond(phone) {
-        padding-right: 2.4rem;
-    }
+    @include respond(phone) { padding-right: 2.4rem; }
 
     &::before {
-        content: '';
+        background-color: $color-gray;
         position: absolute;
-        display: block;
-        height: 100%;
         width: 9.9rem;
+        display: none;
+        height: 100%;
+        content: '';
+        z-index: -1;
         left: 0;
         top: 0;
-        background-color: $color-gray;
-        z-index: -1;
-        display: none;
 
-        @include respond(phone) {
-           display: block;
-        }
+        @include respond(phone) { display: block; }
     }
 
     &__main-box {
@@ -35,9 +30,7 @@
         padding: 2.4rem 10.1rem 2.4rem 8rem;
         background-color: $color-gray;
 
-        @include respond(desktop-mini) {
-            padding: 3.2rem .9rem 3.5rem 3.2rem;
-        }
+        @include respond(desktop-mini) { padding: 3.4rem .9rem 3.5rem 3.2rem; }
 
         @include respond(phone) {
             background-color: initial;
@@ -48,9 +41,7 @@
     &__language-toggler-box { 
         margin-left: 5.5rem; 
 
-        @include respond(desktop-mini) {
-            display: none;
-        }
+        @include respond(desktop-mini) { display: none; }
     }
 
     &__icons-box { @include widthHeight(3.2rem, 3.2rem); }

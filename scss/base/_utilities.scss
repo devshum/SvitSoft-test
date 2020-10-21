@@ -1,4 +1,5 @@
 .mr-24px { margin-right: 2.4rem }
+
 .mb-32px { 
     margin-bottom: 3.2rem; 
 
@@ -14,4 +15,5 @@
 
     @include respond(phone) { margin-bottom: .6rem; }
 }
+
 .mb-24px { margin-bottom: 2.4rem; }

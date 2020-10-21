@@ -15,8 +15,8 @@
     @extend .transition-all;
 
     @include respond(phone) {
-        font-size: 1.4rem;
         line-height: .5rem;
+        font-size: 1.4rem;
     }
 
     &:hover {
@@ -52,9 +52,7 @@
         top: -.1rem;
         content: '';
 
-        @include respond(phone) {
-            left: 70%;
-        }
+        @include respond(phone) { left: 70%; }
     }
 
     &::after {   
@@ -65,22 +63,16 @@
         font-size: 2rem;
         right: 3.2rem;
 
-        @include respond(phone) {
-            transform: translateY(-.6rem);
-        }
+        @include respond(phone) { transform: translateY(-.6rem); }
     }
 
     &--about {
-        @include respond(phone) {
-            display: none;
-        }
+        @include respond(phone) { display: none; }
     }
 
     &--home {
         display: none; 
 
-        @include respond(phone) {
-            display: block;
-        }
+        @include respond(phone) { display: block; }
     }
 }
