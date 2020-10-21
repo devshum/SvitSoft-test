@@ -32,17 +32,17 @@ function watch () {
 }
 
 function prefix () {
-    gulp.src('./css/style.css')
+    gulp.src('./css/main.css')
         .pipe(autoprefixer({
             browsers: ['last 10 versions'],
             cascade: false
         }))
-        .pipe(concat('style.prefix.css'))
+        .pipe(concat('main.prefix.css'))
         .pipe(gulp.dest('./css'))
 }
 
 function compress () {
-    return gulp.src('./css/style.prefix.css')
+    return gulp.src('./css/main.prefix.css')
       .pipe(cleanCSS({compatibility: 'ie8'}))
       .pipe(concat('style.compress.css'))
       .pipe(gulp.dest('./css'));

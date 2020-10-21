@@ -287,6 +287,9 @@ html {
     height: 40%;
     top: 30%;
     right: 0; }
+    @media only screen and (max-width: 47.9375em) {
+      .button:hover::before {
+        display: none; } }
   .button:hover::after {
     right: 2rem; }
   .button::before {

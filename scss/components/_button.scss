@@ -34,9 +34,11 @@
             height: 40%;
             top: 30%;
             right: 0;
+
+            @include respond(phone) { display: none; }
         }
 
-        &::after { right: 2rem; }        
+        &::after { right: 2rem; }  
     }
 
     &::before {
