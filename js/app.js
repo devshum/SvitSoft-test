@@ -1,12 +1,31 @@
 const dataController = (function() {
     const state = {
-        navigation: { toggled: false }
+        navigation: { toggled: false },
+
+        slider: {
+            position: 0,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        }
     };
 
     return {
         isToggled() { return state.navigation.toggled; },
         
         toggleState() { state.navigation.toggled = !state.navigation.toggled; },
+
+        movePosition(val, movePosition) {
+            val === 'inc' ? state.slider.position += movePosition
+                          : state.slider.position -= movePosition
+        },
+
+        getPosition() {
+            return state.slider.position;
+        },
+
+        getSlidesToScroll() {
+            return state.slider.slidesToScroll;
+        },
 
         // TESTING
         getState() { return state; },
@@ -135,14 +154,29 @@ const UIController = (function() {
             parent.insertAdjacentHTML('afterbegin', loader);
         },
 
+        getSliderItemWidth() {
+            const sliderItem = document.getElementById(DOMStrings.sliderItem);
+
+            return sliderItem.offsetWidth;
+        },
+
         clearLoader() {
             const loader = document.querySelector('.loader');
             if(loader) loader.parentElement.removeChild(loader);
         },
 
-       
+        setPosition(position) {
+           const sliderTrack = document.getElementById(DOMStrings.sliderTrack);
+           sliderTrack.style.transform = `translateX(${position}px)`;
+        },
 
-      
+        checkBtns(position, slidesToShow, sliderItemWidth) {
+            const btnPrev = document.getElementById(DOMStrings.btnPrev);
+            const btnNext = document.getElementById(DOMStrings.btnNext);
+
+            btnPrev.disabled = position === 0;
+            btnNext.disabled = position <= -(4 - slidesToShow) * sliderItemWidth;
+        }
     };
 })();
 
@@ -220,6 +254,21 @@ const globalController = (function(dataCtrl, UICtrl) {
         thisVal.style.color = '#4E254F';
     }
 
+
+    const btnLogic = param => {
+        const slidesToShow = 1;
+        const slidesToScroll = dataCtrl.getSlidesToScroll();
+        const sliderItemWidth = UICtrl.getSliderItemWidth();
+        const movePosition = slidesToScroll * sliderItemWidth;
+        
+
+        dataCtrl.movePosition(param, movePosition);
+        const position = dataCtrl.getPosition();
+        UICtrl.setPosition(position);
+        
+        UICtrl.checkBtns(position, slidesToShow, sliderItemWidth);
+    }
+
     const setupEventListeners = () => {
         const linksAll = UICtrl.getLinks();
         const btnsAll = UICtrl.getBtns();
@@ -239,53 +288,24 @@ const globalController = (function(dataCtrl, UICtrl) {
                 clickBtnCtrl(this);
             })
         });
+
+        document.getElementById(DOMStrings.btnNext).addEventListener('click', () => {
+            btnLogic('dec');
+        });
+
+        document.getElementById(DOMStrings.btnPrev).addEventListener('click', () => {
+            btnLogic('inc');
+        });
     };
 
     return {
-        init() { setupEventListeners() }
+        init() { 
+            setupEventListeners(), 
+            UICtrl.checkBtns(0); 
+        }
     }
 
 })(dataController, UIController);
 
 globalController.init();
-
-
-// SLIDER LOGIC
-
-let position = 0;
-const slidesToShow = 1;
-const slidesToScroll = 1;
-const sliderContainer = document.getElementById('slider-container');
-const sliderTrack = document.getElementById('slider-track');
-const sliderItem = document.getElementById('slider-item');
-const btnPrev = document.getElementById('slider-btn-prev');
-const btnNext  = document.getElementById('slider-btn-next');
-const itemsCount = sliderItem.length;
-
-const sliderItemWidth = sliderItem.offsetWidth;
-
-const movePosition = slidesToScroll * sliderItemWidth;
-
-const checkBtns = () => {
-    btnPrev.disabled = position === 0;
-    btnNext.disabled = position <= -(4 - slidesToShow) * sliderItemWidth;
-};
-
-const setPostition = () => sliderTrack.style.transform = `translateX(${position}px)`;
-
-btnNext.addEventListener('click', () => {
-    position -= movePosition;
-    setPostition();
-    checkBtns();
-});
-
-btnPrev.addEventListener('click', () => {
-    position += movePosition;
-    setPostition();
-    checkBtns();
-});
-
-checkBtns();
-
-
 
